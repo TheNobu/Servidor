@@ -8,4 +8,7 @@ server.use(express.json());
 server.use(healthRoutes.router)
 server.use(productsRoutes.router);
 
+server.use(logger);
+
+
 module.exports = {server}

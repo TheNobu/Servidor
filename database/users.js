@@ -8,6 +8,14 @@ const findUserByEmail = (email) => {
   });
 };
 
+const findUserById = (id) => {
+  return prisma.users.findUnique({
+    where: {
+      id,
+    },
+  });
+};
+
 const saveUser = (user) => {
   return prisma.users.create({
     data: user,
@@ -17,4 +25,5 @@ const saveUser = (user) => {
 module.exports = {
   saveUser,
   findUserByEmail,
+  findUserById,
 };
